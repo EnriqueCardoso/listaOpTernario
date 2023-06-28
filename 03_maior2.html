@@ -4,11 +4,16 @@
     //Construa um algoritmo que leia dois números inteiros. Verifique qual dos dois números é maior e o escreva.
 
     //Entrada
-
+    const n1 =  parseInt(prompt("Informe um número inteiro:"));
+    const n2 =  parseInt(prompt("Informe outro número inteiro:"));
     
-    //Processamento
+    //Processamento1
+    let mensagemFinal = (n1 > n2) ? `O numero ${n1} é maior que ${n2}!`
+    :(n2 > n1) ? `O número ${n2} é maior que ${n1}!`
+    : "Os número são iguais";
 
     
     //Saída
+    alert(`${mensagemFinal}`);
     
 </script>
