@@ -8,11 +8,22 @@
     // Apresente o salário final recebido pelo funcionário semanalmente e o preço de cada hora trabalhada.
 
     //Entrada
-
+    const horas = Number(prompt("Informe quantas horas você trabalha por semana:").trim());
+    const ganho = Number(prompt("Informe quanto você ganha por hora:").trim().replace(",", "."));
 
     //Processamento
+    const horasAte60 = (ganho * 1.20) * horas;
+    const horasMaisDe60 = (ganho * 1.30) * horas;
+    const aumento60 = ganho * 1.20;
+    const aumentoMais60 = ganho * 1.30;
+    const ganhoSemanal = horas * ganho;
 
-    
+    let mensagemFinal = (horas <= 45) ? `Vocẽ não recebera adicional, e seu salário semanal é igual a R$${ganhoSemanal.toFixed(2).replace(".", ",")}`
+        : (horas > 45 && horas <= 60) ? `Você recebeu um bônus no valor de suas horas, agora você recebe R$${aumento60.toFixed(2).replace(".", ",")} por hora, e seu salário semanal é igual a R$${horasAte60.toFixed(2).replace(".", ",")}`
+            : (horas > 60) ? `Você recebeu um bônus no valor de suas horas, agora você recebe R$${aumentoMais60.toFixed(2).replace(".", ",")} por hora, e seu salário  semanalé igual a R$${horasMaisDe60.toFixed(2).replace(".", ",")}`
+                : "Você nao trabalha";
+
     //Saída
+    alert(`${mensagemFinal}`);
 
 </script>

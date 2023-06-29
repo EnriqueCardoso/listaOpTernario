@@ -10,11 +10,21 @@
     // Verifique se o usuário ganha mais do que recebe e apresente em tela, indicando quanto que sobrou após o pagamento das contas ou quanto que faltou para poder pagar todas as contas previstas.
 
     //Entrada
-
+    const agua = Number(prompt("Informe quanto você gasta com água mensalmente:").trim().replace(",","."));
+    const energia = Number(prompt("Informe quanto você gasta com energia elétrica mensalmente:").trim().replace(",","."));
+    const telefone = Number(prompt("Informe quanto você gasta com telefone mensalmente:").trim().replace(",","."));
+    const mercado = Number(prompt("Informe quanto você gasta com supermercado mensalmente:").trim().replace(",","."));
+    const salario = Number(prompt("Informe quantos você recebe mensalmente:").trim().replace(",","."));
 
     //Processamento
+    const despesas = agua + energia + telefone + mercado;
+    const sobraOuFalta = salario - despesas;
+
+    let mensagemFinal = (salario >= despesas) ? `Você consegui pagar suas contas e ainda restou R$${sobraOuFalta.toFixed(2).replace(".",",")}`
+    :`Você não conseguiu pagar sua dividas, te faltaram R$${sobraOuFalta.toFixed(2).replace(".",",")} para pagar sua dividas`
 
     
     //Saída
+    alert(`${mensagemFinal}`);
     
 </script>

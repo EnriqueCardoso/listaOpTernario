@@ -10,11 +10,18 @@
     // Entre 5.9 e zero            E
 
     //Entrada
-
+    const nota = Number(prompt("Informe sua nota:").trim().replace(",","."));
 
     //Processamento
-
+    let mensagemFinal = (nota > 10) ? "Nota inexistente."
+    :(nota >= 9) ? "Parabéns você tirou um A."
+    :(nota > 7.9) ? "Parabéns você tirou um B."
+    :(nota > 6.9) ? "Parabéns você tirou um C, dá pra melhorar."
+    :(nota > 5.9) ? "Tem que ficar preocupado, você tirou um D."
+    :(nota <= 5.9 && nota > -0.01) ? "Tem que recuperar, você tirou um E."
+    : "Não existe nota negativa."
     
     //Saída
+    alert(`${mensagemFinal}`);
 
 </script>

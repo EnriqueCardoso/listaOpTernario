@@ -8,11 +8,20 @@
         //- acima de 1500: aumento de 5 %
     
     //Entrada
-
+    const produto = parseInt(prompt("Informe o preço do produto:").trim().replace(",","."));
 
     //Processamento
+    const produtoAte280 = produto * 1.20;
+    const produtoAte700 = produto * 1.15;
+    const produtoAte1500 = produto * 1.10;
+    const produtoAcima1500 = produto * 1.05;
 
+    let mensagemFinal = (produto <= 280) ? `O produto irá custar ${produtoAte280.toFixed(2).replace(".",",")}.`
+    :(produto <=700) ? `O produto irá custar ${produtoAte700.toFixed(2).replace(".",",")}.`
+    :(produto <= 1500) ? `O produto irá custar ${produtoAte1500.toFixed(2).replace(".",",")}.`
+    :(produto > 1500)  `O produto irá custar ${produtoAcima1500.toFixed(2).replace(".",",")}.`;
     
     //Saída
+    alert(`${mensagemFinal}`);
 
 </script>
